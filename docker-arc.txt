@@ -1,0 +1,28 @@
+iDocker Architecture
+
+Docker file —> It’s a place used to specify where the Application Code and Dependencies are present for app execution —>It is required to build Docker Image —>Everything is written here
+
+Docker Image —>It’s like a package which contains code + Dependencies 
+It’s like a blueprint or a template 
+It contains everything to run the app :code, runtime, libraries, environment variables and configuration files
+
+Docker Registry(official DockerHub) —> It’s used to store Docker images 
+DockerHub is a cloud based registry provided by Docker to use pre-built images and to share our images with others 
+
+Docker Container —> It’s a running instance of our image
+Containers are lightweight, isolated environments that share the host OS kernel
+Whenever a Container is formed, behind the scene it uses the Linux OS
+
+Docker daemon(Docker d) —> Everything is operated in Docker by this core component
+It’s a background process that makes docker work
+It looks for docker commands(docker run, docker build) and manages images ,containers, networks, and volumes
+
+*Each Container has it’s own networking, where the Docker networking comes into picture
+Each container uses it’s own isolated network to get connect to or communicate with outside elements 
+
+Docker Volume is a storage for persistency
+
+Every Image has it’s own version(tag)
+
+
+
