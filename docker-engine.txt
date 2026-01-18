@@ -1,0 +1,13 @@
+Docker Engine :
+We have a hardware on top of which
+We have a Linux OS
+On top of which we have Docker Engine
+
+~When we run any image that many containers will be formed —> As many images are executed that many no. Of Containers are formed
+~Whenever we install Docker Desktop on our machine, it expects us to have an extra layer for windows I.e.”Windows subsystem for Linux” —>If we don’t have this layer this will create a problem as docker is designed to work only on Linux
+~Whenever we create Container ,behind the scene it’s like an extra machine created which works on Linux
+~We cannot term it as exactly to be a Linux VM, this is because a machine includes so many components such as hardware and all the things for a laptop to run so it’s like a Linux kind of Virtual machine working inside this 
+	—> Linux VM is an entire setup but container is a part of this setup —>Internally kernel is used to make our application work
+
+~In one machine we can have n no. Of images running —> multiple containers
+
