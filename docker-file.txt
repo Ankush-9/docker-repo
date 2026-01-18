@@ -1,0 +1,40 @@
+Docker File :
+
+Docker File is used to create an image, without it we cannot create an image without Docker File concept
+
+DockerHub pulling of image is a different topic where we pull a pre-built image to our machine
+
+Dockerfile contains instructions to build docker image —> It is used to Specify where is our app code, what dependencies are required, pre built images,So basically it’s a blueprint of our docker image
+In Dockerfile we specify what we need
+
+* The Following Keywords plays an important role in creating Docker file
+	—>FROM
+	—>MAINTAINER
+	—>RUN
+	—>CMD
+	—>COPY
+	—>ADD
+	—>WORKDIR
+	—>EXPOSE
+	—>ENTRYPOINT
+	—>USER
+
+Docker file does not have any extension. 
+We use commands to create Docker file.
+
+* FROM ~ It is used to specify base image for our application (base image refers to dependencies of our application) eg. for tomcat > tomcat image is required
+    *  Eg. FROM python:3.3 , FROM OpenJDK:17 , FROM tomcat:9.0
+* MAINTAINER ~ It is used to specify author of docker file.
+    * Eg. MAINTAINER ANKUSH <ankush9@xyz.com>
+* RUN ~ RUN keyword is used to specify Instructions to execute at the time of image creation —> We can write multiple run instructions in single docker file, which are executed in sequential order—> If there exists any alteration in image we have to recreate an entire image as it’s a read only object 
+    * Eg. RUN ‘git clone <url> , RUN ‘mvn clean package’
+* CMD ~ CMD command is used to specify instructions to execute at the time of container creation  —>CMD cannot have multiple instructions —>if multiple instructions are written in CMD only the last one is executed by docker.
+    * Eg. CMD ‘app.py’
+* COPY ~ It is used to specify the files to be copied from host machine into the Container being created. 
+* ADD ~ It is used to add files from any source to any destination not specific to any host or container.
+* ENTRYPOINT ~ We can perform all Operations performed by CMD by ENTRYPOINT as well but  we can overwrite CMD instructions using Command Line Arguments while ENTRYPOINT cannot be overwritten.
+* WORKDIR ~ It is used to set the working directory for directory Navigation purpose.
+* EXPOSE ~ It is used to expose our port no. On which our containers will be running 
+* USER ~ It is used to set users to run the commands. 
+
+
