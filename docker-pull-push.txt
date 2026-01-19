@@ -1,0 +1,51 @@
+Pushing Docker Images:
+
+Our task is to Create a Docker Image and push it to Docker Registry(Docker Hub) account
+
+We’ll be creating a docker file and as soon as we build an image out of it it creates a read only blueprint of our DockerFile
+
+To run this Docker image we use the command ~ docker run <image-name/image-id>
+To Stop the execution of container we use ~ docker stop <container-id>
+But if the image executed and stopped we’ll have information about it using ~ docker ps -a
+
+To push the image  into a DockerHub account~
+
+—>   Create an account in DockerHub account and remember the username and password.
+	To connect to docker hub from VM use the following~
+	docker login
+	Provide the username and password
+	Login is Successful
+
+—>	Now we’ll have to push our image
+	We have to tag our image with username
+	docker tag <image-name> <username>/<image-name>:v1
+	eg. docker tag image-1 ankush6078/image-1:v1
+	where v1 specifies the version
+
+—>	tagging is important before pushing the image
+
+—>	Now to push the image use~
+	docker push <tag-name>:<version>
+	eg. docker push ankush6078/image-1:v1
+
+—>	We have DockerHub as official Docker Registry from Docker
+	We do have other options from different providers like amazon,Google etc.
+
+—>	Now go to Your Docker Account —>Open My Hub
+	And we’ll have the image added some time ago 
+
+—>	If we don’t specify the version by default docker takes it to be latest
+
+Pulling docker Image :
+
+When we open our pushed image 
+Under tags we’ll have a Command to pull the image which is of the format~
+	docker pull <tagname>:<version>
+	docker pull ankush6078/image-1:v1
+
+The image created is a public repository and if we want it to be private we can perform this as well
+Public  ~ Anyone can pull and use it.
+
+
+
+
