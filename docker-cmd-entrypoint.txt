@@ -33,3 +33,25 @@ Eg.
 COPY target/libs/app-name.jar /usr/app/
 
 COPY target/app-name.jar /usr/app/
+
+ADD~
+It is also used to copy files from source to destination
+ 
+Add can be used for for copying files from any source to destination making it a more flexible choice making it no just specific to host and container.
+We can also add items from the internet by providing the url
+
+eg.
+ADD arget/app-name.jar /usr/app/
+ADD <http-url> /usr/app/
+
+WORKDIR~
+It is used to set working directory for the purpose of directory navigation
+
+eg.
+WORKDIR /usr/app
+
+
+EXPOSE~
+It is just to inform container runs on a specific port no. 
+eg.
+EXPOSE 8080
