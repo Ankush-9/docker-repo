@@ -27,5 +27,24 @@ We create containers within networks.
 By default the bridge network is used behind the scene for docker containers.It is used to run stand alone containers and it assigns an ip address to that container.
 
 Host network is also used to run standalone containers and it will not assign any ip for the containers.
+eg.
+docker run -d --network host Ankush
+-->Ankush will run directly on host ip and no port mapping is required
+It is used when we want to use host port directly.
+Usually useful for high performance scenarios
 
-None refers to no network will be available for containers 
+None refers to no network will be available for containers
+Eg.
+Network run -d —network none myapp
+This means a container is created and no network is required for it, it’s a completely isolated network
+Mainly used when isolation is required with no network access
+i.e. no connectivity required
+
+
+Docker Network Commands~
+
+docker network ls 
+docker network create <netwok-name>
+docker network inspect <component-name(network,Driver)>
+
+ 
