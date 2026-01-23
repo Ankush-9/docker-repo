@@ -1,0 +1,31 @@
+Docker Networking:
+
+In general Network is all about communication and Docker network is used to provide isolated network for our containers
+If we want to establish communication between containers and internet externally then, Networking is required
+
+We can run multiple containers within one machine
+Eg.
+Suppose we have a docker server with two containers within it, if we want to establish connection between them we should make sure the two belong to the same network
+By default in docker we have three networks available bridge, host and none(by default)
+We can also create our own network 
+But if container 1 and container 2 belong to different network communication between them is not possible
+
+docker network ls 
+Is a command used to check for available networks
+
+We can create our own network by using the following command~
+docker network create Ankush-network
+Which when reviewed using the “docker network ls” uses the bridge driver behind the scene 
+
+Command to inspect/view information about components is done as~
+
+docker network inspect bridge
+docker network inspect Ankush-network
+
+We create containers within networks.
+
+By default the bridge network is used behind the scene for docker containers.It is used to run stand alone containers and it assigns an ip address to that container.
+
+Host network is also used to run standalone containers and it will not assign any ip for the containers.
+
+None refers to no network will be available for containers 
