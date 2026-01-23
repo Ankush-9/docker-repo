@@ -1,0 +1,35 @@
+Docker CMD vs ENTRYPOINT:
+
+ENTRYPOINT ~ ENTRYPOINT is used to execute instructions at the time of docker container creation.
+
+Eg.
+ENTRYPOINT [“java” ,”-jar” ,”app-name.jar”]
+
+So,What stays the difference between ENTRYPOINT and CMD command?
+ —>	Their work is exactly same but,
+—>	CMD instructions can be overwritten using the command line arguments where ENTRYPOINT instructions cannot be overwritten rather it appends.
+
+Eg.
+docker run my-app —server.port=8080
+—>	For a CMD instruction, it would have been overwritten in the main Dockerfile
+—>	But,For an ENTRYPOINT, we have a different case as it’s not overwritten but appended to the existing instructions I.e the ENTRYPOINT in Dockerfile is executed and then the arguments are executed
+		—>	The final command can be visualised to run as ~ “java”, “-jar”, “app-name.jar”, myapp —server.port=8080
+
+CONCLUSION ~
+
+Use ENTRYPOINT when you want your container to always execute a specific set of instructions.
+
+Use CMD when you want to provide defaults that the user can overwrite.
+
+We can also use both for flexibility together.
+
+COPY ~
+ It is used to copy files from our host machine to container
+
+First is Source(Copy from)
+And second is the destination(paste to)
+Eg.
+#COPY jar files from Gradle build output
+COPY target/libs/app-name.jar /usr/app/
+
+COPY target/app-name.jar /usr/app/
