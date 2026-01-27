@@ -1,0 +1,42 @@
+** Docker Compose ~
+
+~Usually in a micro-service app there will be multiple api’s and for every api we may have to create separate containers in that case managing these many containers is a difficult task(create/start/stop)
+
+—>So, as management and maintenance of multiple containers is very difficult we have a concept of docker compose
+—>Docker compose is used for defining and running multi-container Docker applications
+—>With single command we can start/stop/create multiple-containers
+
+It uses YAML/YML file for configuration of application’s service
+—>( docker-compose.yml)
+Docker compose file is basically used to specify container information
+
+Whenever we create a Docker compose file, the default and recommended name for it is —> docker-compose.yml 
+We can also have a name of our own choice
+
+There are 4 sections within docker-compose.yml file :
+version :	It represents compose yml version
+
+services : It represents containers information (image-name , port-mapping ,……)
+
+network : It represents the docker network to run our containers
+
+volumes : It is represented as the containers storage location
+
+=======================================================================
+
+** To use the Docker compose we have to separately perform the installation and the setup ~
+
+Connect to your VM(Amazon Linux Used by the author) and hit the following commands~
+
+sudo curl -L \
+"https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" \
+-o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+To verify ~ docker-compose —version
+
+======================================================================
+
+
+
