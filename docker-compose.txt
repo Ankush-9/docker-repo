@@ -39,4 +39,8 @@ To verify ~ docker-compose —version
 ======================================================================
 
 
+Stateful Container and Stateless Container :
 
+Stateful container ~ Data will be there permanently
+
+Stateless container ~ Data will be deleted after container deletion
