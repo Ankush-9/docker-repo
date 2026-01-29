@@ -1,0 +1,40 @@
+Docker Swarm:
+
+It is an orchestration platform(managing the processes(containers)).
+*while Kubernetes is the most popular orchestration tools.
+
+Docker Swarm is used to setup docker cluster(having multiple machines/multiple servers)
+
+Cluster is basically a group of servers/machines.
+It is a way to run and manage many docker containers across multiple machines and it will handle where to run each container, load balancing traffic across them and keeping everything in sync.
+*Till now we have worked with docker-compose where we had multiple containers in a same machine
+
+Here, we’ll define a service(eg. an app) and Swarm manages its containers and we can easily scale up/down the number of replicas we want(i.e. the containers).
+
+Docker Swarm Cluster Setup~
+
+1—> Master Nodes
+2/3 —> Slave(Worker) Nodes
+
+*We can also have any no. of master or worker nodes
+
+—>Create 3/4 EC2 instances(ubuntu used by author) and install docker in all n no. Of instances
+—>For Swarm Cluster Communications enable 2377 port in the security group
+
+—>Get Connected to these EC2 VMs and install docker using the following commands
+		curl -fsSL https://get.docker.com -o get-docker.sh
+		sudo sh get-docker.sh
+—>Check Docker version
+		docker —version
+—>For nowhere is no differentiating factor in all 3/4 machines i.e. only naming is provided by us for being master or worker
+—>We have to configure 
+—>First, we’ll have to set the port no. 2377 before configuring anything 
+—>Configure as ~
+		sudo docker swarm init —advertise-addr <private-ip-of-vm>
+—>The command above gives a message that the current node is the manager(master node)
+—>Next up, we also get a command where we have a token to be run on our worker vm to create a cluster with master and slave nodes
+—>To add a manager to this swarm, we have to run 'docker swarm join-token manager' and follow the instructions.
+
+
+
+
