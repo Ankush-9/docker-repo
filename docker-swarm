@@ -35,6 +35,20 @@ Docker Swarm Cluster Setup~
 —>Next up, we also get a command where we have a token to be run on our worker vm to create a cluster with master and slave nodes
 —>To add a manager to this swarm, we have to run 'docker swarm join-token manager' and follow the instructions.
 
+We deploy applications as a service in Docker Swarm
+Service is a collection of one ore more containers of same app(image)
+Replica is one of the service in docker swarm
+By default one replica will be created after we run our service
+	—>	sudo docker service create —name <service-name> <host-port>:<container-port> <image-name>
+	—>	eg. sudo docker service create —name web-app 8080:8080 web-app-sboot
+	
+Docker Swarm Commands:
 
+sudo docker service ls —> To Check Services Created 
+sudo docker service scale <service-name>=<no.of replicas> —> It evaluates the current number of replica’s and creates n no. Of replicas by either scaling down or scaling up the no. Of replicas.
+sudo docker service ps <service-name> —> This command gives the service details of a service
+sudo docker swarm leave —> It is used to leave worker nodes from Swarm
+sudo docker swarm leave —force —> It is used when we want to remove the master node
+sudo docker service rm <service-name> —> It is used to remove a service 
 
 
