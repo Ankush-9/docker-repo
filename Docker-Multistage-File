@@ -14,5 +14,5 @@ For the same app by creating multistage Docker file we can reduce the image Size
 In Second stage we only mention what is required, then the remaining things are omitted in the final created image
 
 Eg. size of non-multistage docker file ~ 316mb
-	size of sane multi-staged docker file ~ 80mb
+	size of same multi-staged docker file ~ 80mb
 
