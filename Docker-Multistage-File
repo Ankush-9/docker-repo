@@ -1,0 +1,18 @@
+Multistage Docker file:
+
+A multi-stage Dockerfile is a Dockerfile that uses more than one FROM statement to build an application in stages.
+Because building an app usually needs heavy tools (Maven, Node, Gradle, SDKs),
+but running the app only needs a light runtime (JRE, Node runtime, Nginx).
+
+Suppose we are running a java app
+We require many things like JDK, JRE,  Gradle, maven or so
+Using these altogether finally we create an image
+So having all these and more makes the image to be of a bigger size
+	—> The bigger the image  size the more difficult is it’s management
+
+For the same app by creating multistage Docker file we can reduce the image Size —> I.e. we achieve a lighter image
+In Second stage we only mention what is required, then the remaining things are omitted in the final created image
+
+Eg. size of non-multistage docker file ~ 316mb
+	size of sane multi-staged docker file ~ 80mb
+
